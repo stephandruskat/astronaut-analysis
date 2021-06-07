@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2018 German Aerospace Center (DLR)
+# SPDX-License-Identifier: MIT
+
+
 check_code:
   image: python:3.8
   stage: test

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2018 German Aerospace Center (DLR)
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
+
 # Astronaut Analysis
 
 This analysis is based on publicly available astronauts data from [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page).
@@ -15,7 +21,6 @@ The repository is organized as follows:
 - [code](code): Contains the astronaut analysis script
 - [results](results): Contains the resulting analysis plots
 
-
 ## Astronaut Data
 
 The data set has been generated using the following SPARQL query [[1]] (retrieval date: 2018-10-25).
@@ -26,13 +31,15 @@ You can also analyze a recent version of the astronaut data by replacing the dat
 - Replace the file `data/astronauts.json`
 - Run the analysis script
 
+[1]: https://query.wikidata.org/#%23Birthplaces%20of%20astronauts%0ASELECT%20DISTINCT%20%3Fastronaut%20%3FastronautLabel%20%3Fbirthdate%20%3FbirthplaceLabel%20%3Fsex_or_genderLabel%20%3Ftime_in_space%20%3Fdate_of_death%20WHERE%20%7B%0A%20%20%3Fastronaut%20%3Fx1%20wd%3AQ11631.%0A%20%20%3Fastronaut%20wdt%3AP569%20%3Fbirthdate.%0A%20%20%3Fastronaut%20wdt%3AP19%20%3Fbirthplace.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fastronaut%20wdt%3AP21%20%3Fsex_or_gender.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fastronaut%20wdt%3AP2873%20%3Ftime_in_space.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fastronaut%20wdt%3AP570%20%3Fdate_of_death.%20%7D%0A%7D%0AORDER%20BY%20DESC%28%3Ftime_in_space%29
+
 ## Astronaut Analysis Script
 
 The script requires Python >= 3.8 and uses the libraries [pandas](https://pandas.pydata.org/) (*BSD 3-Clause License*) as well as [matplotlib](https://matplotlib.org/) (*Matplotlib License*).
 
 > The script has been successfully tested on Windows 10 and Linux with Python 3.8.
 
-## Installation
+### Installation
 
 Please clone this repository and install the [required dependencies](code/requirements.txt) as follows:
 
@@ -42,7 +49,7 @@ cd astronaut-analysis/code
 pip install -r requirements.txt
 ```
 
-## Usage
+### Usage
 
 You can run the script as follows:
 
@@ -53,7 +60,7 @@ python astronauts-analysis.py
 The script processes the [astronauts data set](data/astronauts.json) and stores the plots in the same directory.
 Existing result plots will be overwritten.
 
-## Testing
+### Testing
 
 The [test.sh](code/test.sh) script performs some basic checks to support maintaining the analysis script:
 
@@ -63,5 +70,6 @@ The [test.sh](code/test.sh) script performs some basic checks to support maintai
 
 > The script runs as part of the [GitLab build pipeline](.gitlab-ci.yml) to find errors introduced by new commits.
 
+## License
 
-[1]: https://query.wikidata.org/#%23Birthplaces%20of%20astronauts%0ASELECT%20DISTINCT%20%3Fastronaut%20%3FastronautLabel%20%3Fbirthdate%20%3FbirthplaceLabel%20%3Fsex_or_genderLabel%20%3Ftime_in_space%20%3Fdate_of_death%20WHERE%20%7B%0A%20%20%3Fastronaut%20%3Fx1%20wd%3AQ11631.%0A%20%20%3Fastronaut%20wdt%3AP569%20%3Fbirthdate.%0A%20%20%3Fastronaut%20wdt%3AP19%20%3Fbirthplace.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fastronaut%20wdt%3AP21%20%3Fsex_or_gender.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fastronaut%20wdt%3AP2873%20%3Ftime_in_space.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fastronaut%20wdt%3AP570%20%3Fdate_of_death.%20%7D%0A%7D%0AORDER%20BY%20DESC%28%3Ftime_in_space%29
+Please see the file [LICENSE.md](LICENSE.md) for further information about how the content is licensed.

@@ -1,4 +1,10 @@
-""" This script analysis the astronaut data set and creates different plots as result. """
+"""
+SPDX-FileCopyrightText: 2018 German Aerospace Center (DLR)
+SPDX-License-Identifier: MIT
+
+
+This script analysis the astronaut data set and creates different plots as result.
+"""
 
 
 from datetime import date

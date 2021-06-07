@@ -1,0 +1,10 @@
+check_code:
+  image: python:3.8
+  stage: test
+  script:
+    - cd code
+    - ./test.sh
+  tags:
+    - docker
+  artifacts:
+    paths: ["code/*.png"]

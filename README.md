@@ -28,7 +28,7 @@ You can also analyze a recent version of the astronaut data by replacing the dat
 
 ## Astronaut Analysis Script
 
-The script requires Python >= 3.8 and uses the libraries [pandas](https://pandas.pydata.org/) as well as [matplotlib](https://matplotlib.org/).
+The script requires Python >= 3.8 and uses the libraries [pandas](https://pandas.pydata.org/) (*BSD 3-Clause License*) as well as [matplotlib](https://matplotlib.org/) (*Matplotlib License*).
 
 > The script has been successfully tested on Windows 10 and Linux with Python 3.8.
 

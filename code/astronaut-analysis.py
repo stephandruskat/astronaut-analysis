@@ -1,16 +1,18 @@
-from os import path, makedirs
 import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import date
+
 
 def calculate_age(born):
     today = date.today()
     return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
 
+
 def is_alive(date_of_death):
     if pd.isnull(date_of_death):
         return True
     return False
+
 
 def died_with_age(row):
     if pd.isnull(row["date_of_death"]):
@@ -19,9 +21,18 @@ def died_with_age(row):
     today = row["date_of_death"]
     return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
 
+
 plt.style.use("ggplot")
 df = pd.read_json("../data/astronauts.json")
-df = df.rename(index=str, columns={"astronaut": "astronaut_id", "astronautLabel": "name","birthplaceLabel": "birthplace","sex_or_genderLabel": "sex_or_gender"})
+df = df.rename(
+    index=str,
+    columns={
+        "astronaut": "astronaut_id",
+        "astronautLabel": "name",
+        "birthplaceLabel": "birthplace",
+        "sex_or_genderLabel": "sex_or_gender"
+    }
+)
 
 df = df.set_index("astronaut_id")
 df = df.dropna(subset=["time_in_space"])

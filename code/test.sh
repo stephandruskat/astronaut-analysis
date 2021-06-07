@@ -7,6 +7,9 @@ set -e
 pip install -r requirements.txt
 echo "Successfully installed required packages"
 
+# Check the code using the flake8 linter
+flake8 --max-line-length 120 astronaut-analysis.py
+
 # Check that the script is basically working and creating the same results
 python astronaut-analysis.py
 test -f boxplot.png

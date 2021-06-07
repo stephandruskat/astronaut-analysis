@@ -1,0 +1,3 @@
+# Packages required to run the analysis script
+pandas==1.2.4
+matplotlib==3.4.2

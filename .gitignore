@@ -1,0 +1,9 @@
+# Ignore Python specific temporarily created files
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Only allow plots in the results directory
+*.png
+!/results/*.png

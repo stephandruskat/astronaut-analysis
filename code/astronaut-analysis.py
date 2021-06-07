@@ -20,7 +20,7 @@ def died_with_age(row):
     return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
 
 plt.style.use("ggplot")
-df = pd.read_json("astronauts.json")
+df = pd.read_json("../data/astronauts.json")
 df = df.rename(index=str, columns={"astronaut": "astronaut_id", "astronautLabel": "name","birthplaceLabel": "birthplace","sex_or_genderLabel": "sex_or_gender"})
 
 df = df.set_index("astronaut_id")

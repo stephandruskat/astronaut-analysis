@@ -8,7 +8,7 @@ pip install -r requirements.txt
 echo "Successfully installed required packages"
 
 # Check that the script is basically working and creating the same results
-python main.py
+python astronaut-analysis.py
 test -f boxplot.png
 test -f combined_histogram.png
 test -f female_humans_in_space.png
